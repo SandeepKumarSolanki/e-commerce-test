@@ -7,7 +7,7 @@ export const fetchProducts = createAsyncThunk(
   "products/fetch",
   async () => {
     const res = await axios.get(import.meta.env.VITE_BACKEND_URL+"/api/products");
-    return res.data;              // ← return the array itself
+    return res.data;              
   }
 );
 
@@ -24,7 +24,7 @@ const productSlice = createSlice({
     })
     .addCase(fetchProducts.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.items  = action.payload;  // ← payload is now Array<product>
+      state.items  = action.payload;  
     })
     .addCase(fetchProducts.rejected, (state, action) => {
       state.status = "failed";

@@ -23,7 +23,7 @@ const CartSummary = React.memo(() => {
     }
   };
 
-  // close on outside click
+ 
   useEffect(() => {
     const onClick = (e) => {
       if (ref.current && !ref.current.contains(e.target)) {
